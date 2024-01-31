@@ -2,10 +2,41 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin: 0;
+    height: 100vh;
+    justify-content: center;
+    background-color: #f0f0f0;
 }
 
 .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     border: 1px solid;
     height: 500px;
     width: 400px;
+    background: black;
+    border-radius: 10px;
+}
+
+.container-row {
+    display: flex;
+    height: 20%; /* Set each row to 25% of the container height */
+    background-color: black; /* Add a background color for visibility */
+    box-sizing: border-box; /* Include borders in the height calculation */
+    border-radius: 10px;
+}
+
+.container-column {
+    flex: 1;
+    background-color: lightgray; /* Add a background color for visibility */
+    border: 1px solid black; /* Add a border for visibility */
+    border-radius: 30px;
+    display: flex; /* Ensure nested elements follow flex properties */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default paddings */
 }

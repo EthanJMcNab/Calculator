@@ -12,6 +12,58 @@ const container = document.createElement("div");
 container.classList.add("container");
 body.appendChild(container);
 
+// Sets rows and columns
+const row = 5; 
+const column = 4; 
+
+// Loop to create rows
+for (let i = 0; i < row; i++) {
+    // Create a row element
+    const rowElement = document.createElement("div");
+    rowElement.classList.add("container-row");
+
+    container.appendChild(rowElement);
+
+    if (i === 0){
+        const columnElement = document.createElement("div");
+        columnElement.classList.add("container-column");
+
+
+        const calcText = document.createTextNode("Display");
+        columnElement.appendChild(calcText);
+
+        rowElement.appendChild(columnElement); 
+    }
+    else {
+        for (let j = 0; j < column; j++) {
+            const columnElement = document.createElement("div");
+            columnElement.classList.add("container-column");
+            rowElement.appendChild(columnElement);
+            }
+    }
+}
+
+// Two number variables for caluclation
+let number1 = 0;
+let number2 = 0;
+
+// Calculate function
+function operate(num1, num2, operator){
+    if (operator == "+"){
+        return add(num1, num2);
+    }
+    else if (operator == "-"){
+        return subtract(num1, num2);
+    }
+    else if (operator == "x"){
+        return multiply(num1, num2);
+    }
+    else if (operator == "/"){
+        return divide(num1, num2);
+    }
+}
+
+// Math operator functions
 function add(num1, num2) {
     return num1 + num2;
 }
@@ -36,10 +88,10 @@ function divide(num1, num2) {
 }
 
 // Example usage:
-const resultAdd = add(5, 3);
-const resultSubtract = subtract(8, 4);
-const resultMultiply = multiply(2, 6);
-const resultDivide = divide(10, 2);
+const resultAdd = operate(5, 3, "+");
+const resultSubtract = operate(8, 4, "-");
+const resultMultiply = operate(2, 6, "x");
+const resultDivide = operate(10, 2, "/");
 
 console.log("Addition:", resultAdd);
 console.log("Subtraction:", resultSubtract);
